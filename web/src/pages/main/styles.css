@@ -1,0 +1,25 @@
+.events-list {
+    padding: 0px 20px;
+    margin: 20px auto 0;
+    display: flex;
+}
+
+.events-list article {
+    background: #fff98c;
+    box-shadow: 1px 1px 5px #292626;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.events-list article p {
+    padding-top: 5px;
+    font-size: 16px;
+    color: #292626;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.events-list button {
+    justify-content: center;
+}
