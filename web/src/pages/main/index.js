@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Moment from 'moment';
 import api from '../../service/api';
+import { FiTrash, FiEdit } from 'react-icons/fi'
 
 import './styles.css';
-import moment from 'moment';
 
 export default class Main extends Component {
 
@@ -28,7 +28,7 @@ export default class Main extends Component {
     }
 
     render() {
-        
+
         const { events } = this.state;
         return (
             <div className="events-list">
@@ -37,7 +37,13 @@ export default class Main extends Component {
                         <strong>{event.title}</strong>
                         <p>{event.description}</p>
                         <p>{Moment(event.date).format('YYYY-MM-DD hh:mm:ss')}</p>
-                        <button onClick={() => this.deleteEvent(event._id)}>DELETE</button>
+                        <FiEdit
+                            className="edit"
+                        />
+                        <FiTrash
+                            className="trashcan"
+                            onClick={() => this.deleteEvent(event._id)}
+                        />
                     </article>
                 ))}
             </div>

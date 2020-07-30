@@ -1,13 +1,18 @@
 .events-list {
     padding: 0px 20px;
     margin: 20px auto 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    justify-content: center;
 }
 
 .events-list article {
     background: #fff98c;
     box-shadow: 1px 1px 5px #292626;
     border-radius: 5px;
+    height: 150px;
     padding: 20px;
     margin: 20px;
 }
@@ -21,7 +26,20 @@
 }
 
 .events-list button {
-    justify-content: center;
-    align-self: stretch;
-    box-shadow: 0px;
+    background-color: transparent;
+    color: white;
+    margin-top: 30px;
+}
+
+.trashcan {
+    margin-top: 25px;
+    color: red;
+    font-size: large;
+    float: right;
+}
+
+.edit {
+    margin-top: 25px;
+    color: blue;
+    font-size: large;
 }

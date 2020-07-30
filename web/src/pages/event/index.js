@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../service/api';
 
+import './styles.css';
+
 export default class Events extends Component {
     state = {
         events: {},
@@ -24,7 +26,6 @@ export default class Events extends Component {
                         <strong>{event.title}</strong>
                         <p>{event.description}</p>
                         <p>{event.date}</p>
-                        <button>DELETE</button>
                     </article>
                 ))}
             </div>
