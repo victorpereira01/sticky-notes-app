@@ -22,4 +22,6 @@
 
 .events-list button {
     justify-content: center;
+    align-self: stretch;
+    box-shadow: 0px;
 }
