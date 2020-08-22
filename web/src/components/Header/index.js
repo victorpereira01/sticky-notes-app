@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
-const Header = () => (
-    <header id="main-header">Minha Agenda<button> + Evento</button></header>
-)
-    
+function Header() {
+    return (
+        <header id="main-header">
+            <Link to="/" style={{textDecoration: 'none'}}>
+                <span>My Notes</span>
+            </Link>
+            <Link to="/cadastro"><button>+ Criar</button></Link>
+        </header>
+    )
+}
+
 export default Header;

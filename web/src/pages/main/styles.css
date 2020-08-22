@@ -1,3 +1,43 @@
+form {
+    padding-top: 15px;
+    margin-left: 35px;
+    font-weight: bold;
+}
+
+label {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: #9e579d;
+}
+
+button {
+    height: 25px;
+    width: 100px;
+    border: 1px solid #9e579d;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px #3f3b3b;
+    font-family: Tahoma;
+    font-weight: bold;
+    background: #9e579d;
+    margin-left: 30px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #80447e;
+}
+
+label input {
+    margin-left: 10px;
+    width: 300px;
+    height: 20px;
+    text-decoration: none;
+    border: 0.5px solid #9e579d;
+    border-radius: 3px;
+}
+
 .events-list {
     padding: 0px 20px;
     margin: 20px auto 0;
@@ -12,17 +52,23 @@
     background: #fff98c;
     box-shadow: 1px 1px 5px #292626;
     border-radius: 5px;
-    height: 150px;
+    height: 210px;
     padding: 20px;
     margin: 20px;
 }
 
+.events-list strong {
+    font-size: 14px;
+}
+
 .events-list article p {
-    padding-top: 5px;
-    font-size: 16px;
+    padding-top: 2px;
+    font-size: 12px;
     color: #292626;
-    margin-top: 5px;
+    margin-top: 10px;
     line-height: 24px;
+    min-height: 32px;
+    line-height: 1.4;
 }
 
 .events-list button {
@@ -31,15 +77,20 @@
     margin-top: 30px;
 }
 
-.trashcan {
-    margin-top: 25px;
+.trashcan,
+.edit {
+    margin-top: 15px;
     color: red;
     font-size: large;
     float: right;
+    cursor: pointer;
 }
 
 .edit {
-    margin-top: 25px;
-    color: blue;
-    font-size: large;
+    color: #9e579d;
+    float: left;
+}
+
+.events-list article .createdAtDate {
+   font-size: 12px;
 }

@@ -1,0 +1,64 @@
+.container {
+    width: 100vw;
+    height: 87vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form {
+    width: 40%;
+    height: 90%;
+
+    display: flex;
+    justify-content: baseline;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.container h2 {
+    color: #9e579d;
+    padding: 10px 95px;
+}
+
+.container label {
+    display: block;
+    padding: 5px 0;    
+}
+
+.container .input-container,
+.container .textarea-container{
+    margin: 20px 0;
+    padding: 0 95px;
+}
+
+.container .input-container input,
+.container .textarea-container textarea {
+    border: 1px solid #9e579d;
+    border-radius: 3px;
+    padding: 5px;
+    font-family: Tahoma;
+}
+
+.container .input-container input {
+    width: 200%;
+    height: 30px;
+}
+
+.container .input-container .date {
+    width: 228%;
+}
+
+.container .textarea-container textarea {
+    width: 210%;
+    height: 70px;
+    resize: none;
+}
+
+.container button {
+    align-self: flex-end;
+    margin-right: 98px;
+    margin-top: 20px;
+    height: 30px;
+}

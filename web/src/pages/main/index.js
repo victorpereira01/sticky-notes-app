@@ -5,6 +5,8 @@ import { FiTrash, FiEdit } from 'react-icons/fi'
 
 import './styles.css';
 
+import Header from '../../components/Header'
+
 export default class Main extends Component {
 
     state = {
@@ -22,8 +24,7 @@ export default class Main extends Component {
     };
 
     deleteEvent = async (id) => {
-        let response = await api.delete(`/events/${id}`);
-
+        await api.delete(`/events/${id}`);
         this.loadEvents();
     }
 
@@ -31,21 +32,25 @@ export default class Main extends Component {
 
         const { events } = this.state;
         return (
-            <div className="events-list">
-                {events.map(event => (
-                    <article key={event._id}>
-                        <strong>{event.title}</strong>
-                        <p>{event.description}</p>
-                        <p>{Moment(event.date).format('YYYY-MM-DD hh:mm:ss')}</p>
-                        <FiEdit
-                            className="edit"
-                        />
-                        <FiTrash
-                            className="trashcan"
-                            onClick={() => this.deleteEvent(event._id)}
-                        />
-                    </article>
-                ))}
+            <div>
+                <Header />
+                <div className="events-list">
+                    {events.map(event => (
+                        <article key={event._id}>
+                            <strong>{event.title}</strong>
+                            <p>{event.description}</p>
+                            <p>{Moment(event.date).format('YYYY-MM-DD hh:mm:ss')}</p>
+                            <p class="createdAtDate">Criado em: {Moment(event.createdAt).format('YYYY-MM-DD hh:mm:ss')}</p>
+                            <FiEdit
+                                className="edit"
+                            />
+                            <FiTrash
+                                className="trashcan"
+                                onClick={() => this.deleteEvent(event._id)}
+                            />
+                        </article>
+                    ))}
+                </div>
             </div>
         )
     }
