@@ -39,8 +39,8 @@ export default class Main extends Component {
                         <article key={event._id}>
                             <strong>{event.title}</strong>
                             <p>{event.description}</p>
-                            <p>{Moment(event.date).format('YYYY-MM-DD hh:mm:ss')}</p>
-                            <p class="createdAtDate">Criado em: {Moment(event.createdAt).format('YYYY-MM-DD hh:mm:ss')}</p>
+                            <p>{Moment(event.date).format('YYYY-MM-DD')}</p>
+                            <p className="createdAtDate">Criado em: {Moment(event.createdAt).format('YYYY-MM-DD')}</p>
                             <FiEdit
                                 className="edit"
                             />

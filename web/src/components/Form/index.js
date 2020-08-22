@@ -1,30 +1,48 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import api from '../../service/api';
 
 import './styles.css';
 
-function Form() {
+export default class Form extends React.Component {
 
-    return (
-        <div className="container">
-            <form>
-                <h2>Create a new note!</h2>
-                <div className="input-container">
-                    <label>Nome</label>
-                    <input maxLength="30"></input>
-                </div>
-                <div className="textarea-container">
-                    <label>Descrição</label>
-                    <textarea maxLength="85"></textarea>
-                </div>
-                <div className="input-container">
-                    <label>Data</label>
-                    <input type="date" class="date"></input>
-                </div>
-                <button type="submit" className="create">Criar</button>
-            </form>
-        </div>
-    )
+    state = {
+        title: '',
+        description: '',
+        date: ''
+    }
+
+    handleSubmit = async event => {
+        await api.post('/events', {
+            title: this.state.title,
+            description: this.state.description,
+            date: this.state.date,
+        });
+    }
+
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <form onSubmit={this.handleSubmit}>
+                    <h2>Create a new note!</h2>
+                    <div className="input-container">
+                        <label>Nome</label>
+                        <input name="title" maxLength="30" onChange={this.handleChange} required="true"></input>
+                    </div>
+                    <div className="textarea-container">
+                        <label>Descrição</label>
+                        <textarea name="description" maxLength="85" onChange={this.handleChange} required="true"></textarea>
+                    </div>
+                    <div className="input-container">
+                        <label>Data</label>
+                        <input name="date" type="date" className="date" onChange={this.handleChange} required="true"></input>
+                    </div>
+                    <button type="submit" className="create">Criar</button>
+                </form>
+            </div>
+        )
+    }
 }
-
-export default Form;
