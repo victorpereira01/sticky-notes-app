@@ -38,43 +38,8 @@ label input {
     border-radius: 3px;
 }
 
-.events-list {
-    padding: 0px 20px;
-    margin: 20px auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 5px;
-    justify-content: center;
-}
-
-.events-list article {
-    background: #fff98c;
-    box-shadow: 1px 1px 5px #292626;
-    border-radius: 5px;
-    height: 210px;
-    padding: 20px;
-    margin: 20px;
-}
-
-.events-list strong {
+strong {
     font-size: 14px;
-}
-
-.events-list article p {
-    padding-top: 2px;
-    font-size: 12px;
-    color: #292626;
-    margin-top: 10px;
-    line-height: 24px;
-    min-height: 32px;
-    line-height: 1.4;
-}
-
-.events-list button {
-    background-color: transparent;
-    color: white;
-    margin-top: 30px;
 }
 
 .trashcan,
@@ -89,8 +54,4 @@ label input {
 .edit {
     color: #9e579d;
     float: left;
-}
-
-.events-list article .createdAtDate {
-   font-size: 12px;
 }

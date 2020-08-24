@@ -1,7 +1,46 @@
 import React from 'react';
 import api from '../../service/api';
+import styled from 'styled-components';
 
-import './styles.css';
+import './styles.css'
+
+const Container = styled.div`
+    width: 100vw;
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+`
+
+const FormContainer = styled.form`
+    width: 40%;
+    height: 90%;
+    display: flex;
+    justify-content: baseline;
+    align-items: flex-start;
+    flex-direction: column;
+`
+
+const Title = styled.h2`
+    color: #9e579d;
+    padding: 10px 95px; 
+`
+
+const InputContainer = styled.div`
+    margin: 20px 0;
+    padding: 0 95px;
+`
+const InputName = styled.label`
+    display: block;
+    padding: 5px 0; 
+`
+
+const Button = styled.button`
+    align-self: flex-end;
+    margin-right: 98px;
+    margin-top: 20px;
+    height: 30px;
+`
 
 export default class Form extends React.Component {
 
@@ -25,24 +64,28 @@ export default class Form extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit}>
-                    <h2>Create a new note!</h2>
-                    <div className="input-container">
-                        <label>Nome</label>
+            <Container className="container">
+                <FormContainer onSubmit={this.handleSubmit}>
+                    <Title>Create a new note!</Title>
+
+                    <InputContainer className="input-container">
+                        <InputName>Nome</InputName>
                         <input name="title" maxLength="30" onChange={this.handleChange} required="true"></input>
-                    </div>
-                    <div className="textarea-container">
-                        <label>Descrição</label>
-                        <textarea name="description" maxLength="85" onChange={this.handleChange} required="true"></textarea>
-                    </div>
-                    <div className="input-container">
-                        <label>Data</label>
+                    </InputContainer>
+
+                    <InputContainer className="textarea-container">
+                        <InputName>Descrição</InputName>
+                        <textarea name="description" maxLength="75" onChange={this.handleChange} required="true"></textarea>
+                    </InputContainer>
+
+                    <InputContainer className="input-container">
+                        <InputName>Data</InputName>
                         <input name="date" type="date" className="date" onChange={this.handleChange} required="true"></input>
-                    </div>
-                    <button type="submit" className="create">Criar</button>
-                </form>
-            </div>
+                    </InputContainer>
+
+                    <Button type="submit" className="create">Criar</Button>
+                </FormContainer>
+            </Container>
         )
     }
 }
